@@ -25,19 +25,17 @@ class EnsembleRefinement:
 
         self.second_stage_resp = []
         
-    def run_first_stage(self):
-        self.model.set_curr_temperature(np.random.uniform(0.0, 2.0))
+    def run_first_stage(self): 
         for i in range(self.num_resp_first_stage):
+            self.model.set_curr_temperature(np.random.uniform(0.0, 2.0))
             self.first_stage_concat_out += ("\n" + self.model.generate(self.prompt))
-        
-        self.model.reset_curr_gen_config()
+            self.model.reset_curr_gen_config()
 
     def run_second_stage(self):
         model_input = self.first_stage_concat_out + "\n" + self.prompt
 
         for i in range(self.num_resp_second_stage):
+            self.model.clear_chat()
             self.second_stage_resp.append(self.model.generate(model_input))
-        
-        self.model.reset_curr_gen_config()
 
         return self.second_stage_resp
