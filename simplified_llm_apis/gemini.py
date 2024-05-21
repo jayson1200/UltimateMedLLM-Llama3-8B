@@ -28,6 +28,8 @@ class Gemini(LLM_Model):
             "temperature": 1,
             "top_p": 1,
         }
+
+        self.init_gen_config = self.curr_gen_config.copy()
         
         self.curr_model = GenerativeModel(
             "gemini-1.5-pro-preview-0514",
@@ -51,3 +53,6 @@ class Gemini(LLM_Model):
     
     def clear_chat(self):
         self.curr_chat = self.curr_model.start_chat()
+
+    def reset_curr_gen_config(self):
+        self.curr_gen_config = self.init_gen_config.copy()
