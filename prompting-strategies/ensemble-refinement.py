@@ -39,3 +39,7 @@ class EnsembleRefinement:
             self.second_stage_resp.append(self.model.generate(model_input))
 
         return self.second_stage_resp
+    
+    def run_ensemble_refinement(self):
+        self.run_first_stage()
+        return self.run_second_stage()
