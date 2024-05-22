@@ -6,7 +6,7 @@ from utils.get_env_vars import get_env_vars
 import base64
 import vertexai
 from vertexai.generative_models import GenerativeModel, Part
-import vertexai.preview.generative_models as generative_models
+import vertexai.generative_models as generative_models
 
 from simplified_llm_apis.model import LLM_Model
 
@@ -32,7 +32,8 @@ class Gemini(LLM_Model):
         self.init_gen_config = self.curr_gen_config.copy()
         
         self.curr_model = GenerativeModel(
-            "gemini-1.5-pro-preview-0514",
+            # "gemini-1.5-pro-preview-0514",
+            "gemini-1.0-pro-002",
             system_instruction=[system_instructions]
         )
 

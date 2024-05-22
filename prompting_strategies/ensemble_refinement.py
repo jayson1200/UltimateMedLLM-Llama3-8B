@@ -28,7 +28,7 @@ class EnsembleRefinement:
     def run_first_stage(self): 
         for i in range(self.num_resp_first_stage):
             self.model.set_curr_temperature(np.random.uniform(0.0, 2.0))
-            self.first_stage_concat_out += ("\n" + self.model.generate(self.prompt))
+            self.first_stage_concat_out += ("\n" + self.model.send_chat_message(self.prompt))
             self.model.reset_curr_gen_config()
 
     def run_second_stage(self):
@@ -36,7 +36,7 @@ class EnsembleRefinement:
 
         for i in range(self.num_resp_second_stage):
             self.model.clear_chat()
-            self.second_stage_resp.append(self.model.generate(model_input))
+            self.second_stage_resp.append(self.model.send_chat_message(model_input))
 
         return self.second_stage_resp
     
