@@ -10,7 +10,7 @@ import vertexai.preview.generative_models as generative_models
 
 from simplified_llm_apis.model import LLM_Model
 
-ENV_PATH = "/home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/env.json"
+ENV_PATH = "/home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/env"
 env_dict = get_env_vars(ENV_PATH)
 PROJECT_ID = env_dict["project-id"]
 safety_settings = {
