@@ -1,13 +1,8 @@
 PROJ_PATH = "/home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/"
-STEP_ONE_SYS_PROMPT = """The following are multiple choice questions about medical knowledge. Solve them in a step-by-step fashion,
-starting by summarizing the available information. Then provide an explanation of your reasoning. Then provide a single option from the four options as the final answer. 
-We provide two example prompts, summaries, explanations, and answers, fill in the last example continuing from what was provided."""
 
-STEP_TWO_SYS_PROMPT = """The following are multiple choice questions about medical knowledge. Solve them in a step-by-step fashion,
-starting by summarizing the available information. Then provide an explanation of your reasoning. Then provide the answer. 
-Output a single option from the four options as the final answer. We provide several student reasonings for the last question as well as two example prompts, summaries, explanations, and answers. 
-Some of them may be correct and some incorrect. You can use the best correct arguments from these reasonings. 
-Beware of wrong reasoning and do not repeat wrong reasoning. We provide two example prompts, summaries, explanations, and answers, fill in the last example continuing from what was provided."""
+STEP_ONE_SYS_PROMPT = """The following is a multiple choice question about medical knowledge. Solve it in a step-by-step fashion. First summarize the available information. Second, provide an explanation of your reasoning. Third, provide a single letter option from the choices as the final answer. Fill in what is remaining from the last question in the exact same format as the two examples before it. The last words must include the answer tag [Answer], a newline, and the a single letter choice."""
+
+STEP_TWO_SYS_PROMPT = """The following is a multiple choice question about medical knowledge. Solve it a step-by-step fashion, first summarize the available information. Second provide an explanation of your reasoning. Third provide the answer in the form of a single capitalized letter choice. We provide several student reasonings. Some of them may be correct and some incorrect. You can use the best correct arguments from these reasonings. Beware of wrong reasoning and do not repeat wrong reasoning. We provide two example prompts, summaries, explanations, and answers, continue from the third prompt. The last words must include the answer tag [Answer], a newline, and the a single letter choice."""
 
 import sys
 import numpy as np
