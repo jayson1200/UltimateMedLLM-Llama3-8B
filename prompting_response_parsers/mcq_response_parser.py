@@ -14,7 +14,7 @@ class MCQPARSER:
             curr_score = dict(zip(self.choices, [0] * len(self.choices)))
 
             for generation in generations:
-                splits = generation.split("Answer:")
+                splits = generation.split("[Answer]")
 
                 for choice in self.choices:
                     if choice in splits[-1]:
