@@ -2,7 +2,7 @@
 
 A medical question answering LLM built
 
-Benchmarking example usage:
+# Benchmarking example:
 
 ```python
 PROJ_PATH = "/home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/"
