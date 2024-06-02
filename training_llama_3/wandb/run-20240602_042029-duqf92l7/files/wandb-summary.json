@@ -1,0 +1,1 @@
+{"loss": 1.8337044715881348, "lr": 1.4999999999999999e-05, "gpu_resources": 20177572864, "total_training_steps": 5, "_timestamp": 1717327428.4739602, "_runtime": 199.4095470905304, "_step": 428, "peak_memory_active": 18.396574208, "peak_memory_alloc": 18.396574208, "peak_memory_reserved": 24.00190464, "_wandb": {"runtime": 199}}

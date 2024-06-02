@@ -1,0 +1,55 @@
+model:
+  _component_: torchtune.models.llama3.lora_llama3_8b
+  lora_attn_modules:
+  - q_proj
+  - v_proj
+  apply_lora_to_mlp: false
+  apply_lora_to_output: false
+  lora_rank: 8
+  lora_alpha: 16
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  path: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/original/tokenizer.model
+checkpointer:
+  _component_: torchtune.utils.FullModelMetaCheckpointer
+  checkpoint_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/original
+  checkpoint_files:
+  - consolidated.00.pth
+  recipe_checkpoint: null
+  output_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3
+  model_type: LLAMA3
+resume_from_checkpoint: false
+dataset:
+  _component_: torchtune.datasets.instruct_dataset
+  source: szhang120/unified_large_medical_llama3_8b_instruct_dataset
+  train_on_input: true
+  template: MedLLMTemplate
+  max_seq_len: 1024
+  split: train
+seed: null
+shuffle: true
+batch_size: 2
+optimizer:
+  _component_: torch.optim.AdamW
+  weight_decay: 0.01
+  lr: 0.0003
+lr_scheduler:
+  _component_: torchtune.modules.get_cosine_schedule_with_warmup
+  num_warmup_steps: 100
+loss:
+  _component_: torch.nn.CrossEntropyLoss
+epochs: 4
+max_steps_per_epoch: null
+gradient_accumulation_steps: 64
+compile: false
+output_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/lora_finetune_out
+metric_logger:
+  _component_: torchtune.utils.metric_logging.WandBLogger
+  project: CS224n
+log_every_n_steps: null
+device: cuda
+dtype: bf16
+enable_activation_checkpointing: true
+profiler:
+  _component_: torchtune.utils.profiler
+  enabled: false

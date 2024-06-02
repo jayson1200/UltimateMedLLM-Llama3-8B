@@ -1,0 +1,24 @@
+INFO:torchtune.utils.logging:Logging /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/original/torchtune_config.yaml to W&B under Files
+INFO:torchtune.utils.logging:Model is initialized with precision torch.bfloat16.
+INFO:torchtune.utils.logging:Memory Stats after model init:
+{'peak_memory_active': 16.572998144, 'peak_memory_alloc': 16.572998144, 'peak_memory_reserved': 16.642998272}
+INFO:torchtune.utils.logging:Tokenizer is initialized from file.
+INFO:torchtune.utils.logging:Optimizer and loss are initialized.
+INFO:torchtune.utils.logging:Loss is initialized.
+INFO:torchtune.utils.logging:Dataset and Sampler are initialized.
+INFO:torchtune.utils.logging:Learning rate scheduler is initialized.
+1|1|Loss: 2.0842018127441406: 100%|███████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.00it/s]
+INFO:torchtune.utils.logging:Model checkpoint of size 16.06 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_0.pt
+INFO:torchtune.utils.logging:Adapter checkpoint of size 0.01 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/adapter_0.pt
+INFO:torchtune.utils.logging:Recipe checkpoint of size 0.00 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/recipe_state.pt
+2|1|Loss: 2.0842018127441406: 100%|███████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.80it/s]
+INFO:torchtune.utils.logging:Model checkpoint of size 16.06 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_1.pt
+INFO:torchtune.utils.logging:Adapter checkpoint of size 0.01 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/adapter_1.pt
+INFO:torchtune.utils.logging:Recipe checkpoint of size 0.00 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/recipe_state.pt
+3|1|Loss: 2.0842018127441406: 100%|███████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.73it/s]
+INFO:torchtune.utils.logging:Model checkpoint of size 16.06 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_2.pt
+INFO:torchtune.utils.logging:Adapter checkpoint of size 0.01 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/adapter_2.pt
+INFO:torchtune.utils.logging:Recipe checkpoint of size 0.00 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/recipe_state.pt
+4|1|Loss: 2.0842018127441406: 100%|███████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  3.78it/s]
+INFO:torchtune.utils.logging:Model checkpoint of size 16.06 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_3.pt
+INFO:torchtune.utils.logging:Adapter checkpoint of size 0.01 GB saved to /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/adapter_3.pt
