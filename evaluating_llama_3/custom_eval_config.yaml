@@ -1,0 +1,38 @@
+# Config for EleutherEvalRecipe in eleuther_eval.py
+#
+# To launch, run the following command from root torchtune directory:
+#    tune run eleuther_eval --config eleuther_evaluation tasks=["truthfulqa_mc2","hellaswag"]
+
+# Model Arguments
+model:
+  _component_: torchtune.models.llama3.llama3_8b
+
+checkpointer:
+  _component_: torchtune.utils.FullModelMetaCheckpointer
+  checkpoint_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints
+  checkpoint_files:
+    [
+      /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_3.pt,
+    ]
+  recipe_checkpoint: null
+  output_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/evaluating_llama_3
+  model_type: LLAMA3
+
+# Tokenizer
+tokenizer:
+  _component_: torchtune.models.llama3.llama3_tokenizer
+  path: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/original/tokenizer.model
+
+# Environment
+device: cuda
+dtype: bf16
+seed: 217
+
+# EleutherAI specific eval args
+tasks: ["truthfulqa_mc2"]
+limit: null
+max_seq_length: 1024
+batch_size: 1
+
+# Quantization specific args
+quantizer: null
