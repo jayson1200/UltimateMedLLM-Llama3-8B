@@ -1,0 +1,21 @@
+include: multimedqa.yaml
+group:
+  - chain_of_thought
+  - self_consistency
+task: multimed-self-consistency
+generation_kwargs:
+  until:
+    - "Q:"
+    - "\n\n"
+  do_sample: true
+  temperature: 0.2
+repeats: 64
+filter_list:
+  - name: "maj@64"
+    filter:
+      - function: "regex"
+        regex_pattern: "The answer is (\\-?[0-9\\.\\,]*[0-9]+)"
+      - function: "majority_vote"
+      - function: "take_first"
+metadata:
+  version: 1.0

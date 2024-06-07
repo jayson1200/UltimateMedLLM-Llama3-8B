@@ -14,7 +14,8 @@ checkpointer:
     [
       /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/meta_model_3.pt,
     ]
-  recipe_checkpoint: null
+  recipe_checkpoint: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/recipe_state.pt
+  adapter_checkpoint: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/training_llama_3/.checkpoints/llama3/adapter_3.pt
   output_dir: /home/meribejayson/Desktop/Projects/UltimateMedLLM-Llama3-8B/evaluating_llama_3
   model_type: LLAMA3
 
@@ -29,7 +30,7 @@ dtype: bf16
 seed: 217
 
 # EleutherAI specific eval args
-tasks: ["truthfulqa_mc2"]
+tasks: ["multimed-self-consistency"]
 limit: null
 max_seq_length: 1024
 batch_size: 1
